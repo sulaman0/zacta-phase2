@@ -109,8 +109,8 @@ list($signed_invoice_string, $invoice_hash, $qr) = $egs->signInvoice($invoice, $
 // Check fatoora is created invoice is correct or not.
 $invoiceCompliance = $egs->checkInvoiceCompliance($signed_invoice_string, $invoice_hash, $binary_security_token, $secret);
 //echo '<pre>';
-print_r(json_decode($invoiceCompliance));
-dd("");
+//print_r(json_decode($invoiceCompliance));
+//dd("");
 
 
 // Generate QR Code
