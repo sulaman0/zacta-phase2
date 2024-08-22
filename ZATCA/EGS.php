@@ -121,6 +121,7 @@ class EGS
         );
     }
 
+    // 1.
     public function issueComplianceCertificate(string $otp, $csr): array
     {
         if (!$csr) throw new Exception('EGS needs to generate a CSR first.');
@@ -131,6 +132,7 @@ class EGS
         return [$issued_data->requestID, $issued_data->binarySecurityToken, $issued_data->secret];
     }
 
+    // 2.
     public function signInvoice(array $invoice, array $egs_unit, string $certificate, string $private_key): array
     {
 
@@ -196,6 +198,7 @@ class EGS
         return [$signed_invoice_string, $invoice_hash, $qr];
     }
 
+    // 2.
     public function checkInvoiceCompliance(string $signed_invoice_string, string $invoice_hash, string $certificate, string $secret): string
     {
         if (!$certificate || !$secret)
