@@ -417,6 +417,11 @@ class ZATCASimplifiedTaxInvoice
              *
              */
             $iit = '';
+
+            foreach ($item['cac:Price'] as $pr){
+                $invoice_line_template_copy = str_replace('__Price', $total_subtotal, $invoice_line_template_copy);
+            }
+
             foreach ($item['cac:Item']['cac:ClassifiedTaxCategory'] as $ClassifiedTaxCategory) {
                 $invoice_item_template = $invoice_line_template['invoice_item'];
                 $invoice_item_template = str_replace('___S', $ClassifiedTaxCategory['cbc:ID'], $invoice_item_template);
